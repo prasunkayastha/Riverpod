@@ -12,7 +12,7 @@ class CounterView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final value = ref.watch(CounterViewModelProvider);
+    final value = ref.watch(counterViewModelProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -30,14 +30,14 @@ class CounterView extends ConsumerWidget {
         children: [
           FloatingActionButton(
             onPressed: () {
-              ref.read(CounterViewModelProvider.notifier).increment();
+              ref.read(counterViewModelProvider.notifier).increment();
             },
             child: const Icon(Icons.add),
           ),
           const SizedBox(height: 8),
           FloatingActionButton(
             onPressed: () {
-              ref.read(CounterViewModelProvider.notifier).decrement();
+              ref.read(counterViewModelProvider.notifier).decrement();
             },
             child: const Icon(Icons.remove),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final CounterViewModelProvider =
+final counterViewModelProvider =
     StateNotifierProvider<CounterViewModel, int>((ref) {
   return CounterViewModel();
 });
