@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:river_pod/model/student.dart';
+import 'package:river_pod/view/Display_student_view.dart';
 import 'package:river_pod/view_model/student_view_model.dart';
 
 class StudentView extends ConsumerStatefulWidget {
@@ -56,6 +57,12 @@ class _StudentViewState extends ConsumerState<StudentView> {
                   ref
                       .read(StudentViewModelProvider.notifier)
                       .addStudent(student);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>  DisplayPage(student: student),
+                    ),
+                  );
                 },
                 child: const Text('Add Student'),
               ),
